@@ -1,0 +1,2 @@
+- For code review
+- To learn how to solve algorithm problems
