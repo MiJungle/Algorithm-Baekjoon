@@ -12,8 +12,8 @@ for _ in range(N):
 def preorder(root):
     if root != ".":
         print(root, end='')
-        preorder(tree[root][0])
-        preorder(tree[root][1])
+        preorder(tree[root][0]) #왼쪽
+        preorder(tree[root][1]) #오른쪽
 
 def inorder(root):
     if root != ".":
