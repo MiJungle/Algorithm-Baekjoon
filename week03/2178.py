@@ -1,4 +1,5 @@
-# 소스: https://jokerldg.github.io/algorithm/2021/03/24/maze.html
+
+   # 소스: https://jokerldg.github.io/algorithm/2021/03/24/maze.html
 
 import sys
 from collections import deque
@@ -31,7 +32,6 @@ def bfs(x,y): #미로는 BFS다
             if graph[nx][ny] == 1: ##숫자가 커지니까 여기서 걸러지기 떄문에 방문 탐색을 안해도 되는 것
                 graph[nx][ny] = graph[x][y] + 1 #graph[0][0]= 1 + 1 = 2
                 queue.append((nx, ny))
-                print(nx,ny,  graph[nx][ny])
     return graph[N-1][M-1]
 print(bfs(0,0))
 #왜 BFS 문제인가?????
@@ -43,4 +43,3 @@ print(bfs(0,0))
 #그 좌표를 append한다. 
 #count를 출력한다.
 #최소 경로인지는 어떻게 확인하는가? 
-
