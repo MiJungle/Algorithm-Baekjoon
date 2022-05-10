@@ -5,19 +5,20 @@ input =sys.stdin.readline
 n,s = map(int, input().split())
 k = list(map(int, input().split()))
 
-k.sort()
+ans = 0
+num = []
 left = 0
-right = n-1
-big = 2e9 + 1
-ans =[]
-m = 0
-while left < right:
-    m += k[left] 
-    if m == s:
-        ans = [m]
-
-    if m <s:
-        left += 1
-    else:
-        right -= 1
-        
+for i in range(n):
+    left = i
+    right = left+ 1
+    num.append(k[left])
+    num = []
+    print(right)
+    while right != n-1: 
+        num.append(k[right])
+        if sum(num) < 15:
+            right += 1
+        else: 
+            ans = len(num)
+            continue
+print(ans)
