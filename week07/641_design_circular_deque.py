@@ -5,7 +5,7 @@ class MyCircularDeque(object):
         self.k, self.len = k, 0
         self.head.right, self.tail.left = self.tail, self.head
 
-        
+##head, tail 둘다 이 함수를 사용하기 위해 n을 사용했다. 
     def _add(self, node, new):
         n = node.right
         node.right = new

@@ -9,7 +9,7 @@ class MyCircularQueue(object):
     def enQueue(self, value):
         if self.q[self.p2] is None:
             self.q[self.p2] = value
-            self.p2 = (self.p2 +1) %self.maxlen
+            self.p2 = (self.p2 +1) %self.maxlen #범위 벗어나지 않도록
             return True
         else:
             return False
