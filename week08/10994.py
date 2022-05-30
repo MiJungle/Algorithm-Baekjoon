@@ -1,14 +1,16 @@
-n = int(input())
+
+def add_star(ptn):
+    return"* " + ptn + " *"
 
 def recur(n):
     if n == 1:
-        print("*", end=' ')
+        return "*"
         
     else:
-        print("*"* (4*n-3))
-        print("*" + ' '*(4*n-5) + "*")
-        print("*", recur(n-1), "*")
-        print("*" + ' '*(4*n-5) + "*")  
-        print("*"* (4*n-3))      
+        return ["*"* (4*n-3) ]\
+            +["*"+ ' '*(4*n-5) + "*"]\
+        +list(map(add_star, recur(n-1)))\
+        +["*" + ' '*(4*n-5) + "*"]\
+        +["*"* (4*n-3)]    
 
-recur(n)
+print("\n".join(recur(int(input()))))

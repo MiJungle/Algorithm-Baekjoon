@@ -5,14 +5,14 @@ target = 7
 ans = []
 fin = []
 def dfs(candidates, target):
+    if target < 0:
+        return 
     for i in candidates:
-        ans.append(i)
-        target2 = target-i
-        if target2 !=0:
-            for i in candidates:
-                ans.append(i)
-                dfs(candidates, target2)
-    fin.append(ans)
-    return fin
+        fin.append(i)
+        target = target-i
+        if target !=0:
+            dfs(candidates, target)
+    ans.append(fin)
+    return ans
 
 print(dfs(candidates, target))
