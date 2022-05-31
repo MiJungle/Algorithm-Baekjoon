@@ -16,16 +16,15 @@ def cut_tree():
  #최대 길이는 마지막 나무 높이만큼 
     num = 0
     idx = 0
-    while length <= trees[-1] or length >= 0:
+    while num != m:
         if trees[idx] > length:
             num += trees[idx]- length
-        print("first:",length, num)
-    if num == m: #m 값 목표 도달 
+        if num == m: #m 값 목표 도달 
+            return length
+        elif num > m:
+            length = length + 1
+        else: 
+            length = length - 1
+        idx+= 1
         return length
-    elif num > m:
-        length = length + 1
-    else: 
-        length = length - 1
-    print(length, num)
-    return length
 print(cut_tree())
