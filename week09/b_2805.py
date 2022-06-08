@@ -1,14 +1,17 @@
 import sys
 sys.stdin = open('input.txt')
+import time
+
 input = sys.stdin.readline
 
 n,m = map(int,input().split())
 tree = list(map(int, input().split()))
 tree.sort()
 
-left = 1
+left = 0
 right = max(tree)
 while left <= right:
+    start = time.time() 
     mid = (left+right)//2
     ans = 0
     for t in tree:
@@ -20,6 +23,7 @@ while left <= right:
         right = mid-1
 
 print(right)
+print("time :", time.time() - start)
 
 
 
