@@ -5,24 +5,26 @@ input = sys.stdin.readline
 n = int(input())
 liquids= list(map(int,input().split()))
 liquids.sort()
-ans = []
 min = 2e9
+left = 0
+right = n-1
+ans = []
 def makezero():
-    global min
-    left = 0
-    right = left+1
-    while left < right:
-        for i in range(n):
-            if liquids[left] + liquids[right] == 0:
+    global min, left, right
+
+    for _ in range(n):
+        while left < right:
+            if liquids[right] + liquids[left] == 0:
                 ans = [liquids[left], liquids[right]]
                 return ans
-            if abs(liquids[left] +liquids [left])< min:
-                min = liquids[right] + liquids[left]
+            elif abs(liquids[right] + liquids[left]) < min:
+                min = abs(liquids[right] + liquids[left])
                 ans = [liquids[left], liquids[right]]
+            elif liquids[right] + liquids[left] <0:
                 left += 1
-            else:
+            elif liquids[right] + liquids[left] >0:
                 right -= 1
-        return ans
-print(*makezero(),"")
-        
+    return ans
+
+print(*makezero(), end = '')
 
