@@ -1,31 +1,44 @@
-import heapq
-arr1 = [9, 20, 28, 18, 11]
-arr2 = [30, 1, 21, 17, 28]
+from collections import defaultdict
 
-n = 5
+
+from collections import defaultdict
+arr1 = [46, 33, 33, 22, 31, 50]
+arr2 = [27, 56, 19, 14, 14, 10]
+
+n = 6
 
 def solution(n, arr1, arr2):
     ar1 = []
-    for i in arr1:
-        n = format(i, 'b')
-        ar1.append(n)
-
     ar2 = []
-    for i in arr2:
-        m = format(i, 'b')
+    for i in range(n):
+        k= format(arr1[i], 'b')
+        ar1.append(k)
+        m = format(arr2[i], 'b')
         ar2.append(m)
     ans = []
     
     for i in range(len(ar2)):
         ans.append(str(int(ar1[i])+int(ar2[i])))
 
+    dd = []
     for i in ans:
-        print("\"", end='')
-        for j in i:
-            if int(j) >= 1:
-                print("#",end='')
-            else:
-                print(" ", end="")
-        print("\",",end='')        
+        i = list(map(str, i))
+        dd.append(i)
     
-print(solution(5,arr1,arr2))
+    for i in dd:
+        if len(i) != n:
+            while len(i) != n:
+                i.insert(0,'0')
+    mk = []
+    for i in dd:
+        m =''.join(i)
+        mk.append(m)
+    m = [i.replace("1","#") for i in mk]
+    s = [i.replace("2","#") for i in m]
+
+    fin = [i.replace("0"," ") for i in s]
+
+    return fin
+    
+print(solution(n,arr1,arr2))
+
