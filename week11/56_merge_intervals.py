@@ -8,27 +8,26 @@ intervals = [[1,3],[2,6],[8,10],[15,18]]
 :type intervals: List[List[int]]
 :rtype: List[List[int]]
 """
-intervals.sort()
-temp = []
-ans = []
-while intervals:
-    temp.append(intervals.pop(0))
-    if  intervals:
-        if temp[-1][1]>= intervals[0][0]:
-            temp.append([temp[-1][0],intervals[0][1]])
-            temp.pop(-1)
-            ans.append([temp[-1][0],intervals[0][1]])
-        else:
-            ans.append(intervals[0])
-print(temp)
-print(ans)
+class Solution(object):
+    def merge(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        intervals.sort()
+        if intervals:
+            temp = [intervals[0]]
+        ans = []
 
-    # print(temp[-1][1],intervals[0][0])
-    # if temp[-1][1]>= intervals[0][0]:
-    #     print(temp)
-    #     temp.append([temp[-1][0],intervals[0][1]])
-    #     ans.append([temp[-1][0],intervals[0][1]])
-    # else:
-    #     temp.append(intervals[0])
-    #     ans.append(intervals[0])
+        for i in range(1, len(intervals)):
+            if temp[-1][1]>= intervals[i][0]:
+                k = temp.pop()
+                temp.append([k[0], max(intervals[i][1], k[1])])
+                             
+            else:
+                temp.append(intervals[i])
 
+        return temp
+
+# Runtime: 117 ms, faster than 89.37% of Python online submissions for Merge Intervals.
+# Memory Usage: 18.2 MB, less than 72.36% of Python online submissions for Merge Intervals.

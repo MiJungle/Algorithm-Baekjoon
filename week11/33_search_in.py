@@ -1,8 +1,4 @@
 
-
-
-
-
 #간단 풀이:
 # class Solution(object):
     # def search(self, nums, target):
