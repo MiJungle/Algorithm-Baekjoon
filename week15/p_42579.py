@@ -32,32 +32,6 @@ def solution(genres, plays):
         final.append(ans[i][2])
 
     return final
-    # print(max_arr)
-    # real =[]
-    # for i , key in enumerate(sorted_arr):
-
-    #     for j in range(len(genres)):
-    #         if genres[j] == key[0]:
-    #             if len(real) < 2:
-    #                 real.append([i,key[0],j,plays[j]])
-    #             else:
-    #                 if real[-1][1] == key[0] and real[-2][1] == key[0]:
-    #                     continue
-    #                 else: 
-    #                     real.append([i,key[0],j,plays[j]])
-    # answer = []
-    # for i in max_arr:
-    #     answer.append(i[1])
-    # return answer
-    
-
-    # print(max_arr)
-
-        # print(i,key[0])
-    #     if genres[i] == key:
-    #         max_arr.append(key,i)
-    # print(max_arr)
-
 
 
 print(solution(genres,plays))
