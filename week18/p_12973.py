@@ -1,25 +1,20 @@
 s= "bbbbb"
 
 def solution(s):
-    s= list(s)
-    left = 0
-    right = left + 1
-    while right <= len(s)-1: 
-        if s[left] == s[right]:
-            s.remove(s[left])
-            s.remove(s[left])
-            left = 0 
-            right = left + 1
-
+    arr = []
+    
+    for i in s:
+        if not arr:
+            arr.append(i)
         else:
-            left += 1
-            right = left + 1
-    if len(s) == 0:
-        return 1
-    else:
+            if arr[-1] == i:
+                arr.pop()
+            else:
+                arr.append(i)
+                
+    if arr:
         return 0
-
-print(solution(s))
-
+    else:
+        return 1
 
 
