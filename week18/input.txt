@@ -1,2 +1,20 @@
-front 499,499 through 500,500
-flip 498,498 through 501,501     
+["aaa","bbb","ccc","ddd","eee","fff","ggg","hhh"]  
+move -u 1
+move -d 8
+move -d 4
+delete
+move -u 3
+delete
+list
+move -d 4
+delete
+move -u 2
+list
+restore
+restore
+delete
+list
+restore
+restore
+restore
+q
