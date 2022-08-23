@@ -16,12 +16,14 @@ function solution(N,stages){
         count = 0
 
     }
-divide.sort((a,b)=>{return b-a}).reverse()
-console.log(divide)
+divide.sort((a,b)=>{return b[0]-a[0]})
+
 let answer = []
 for(let i = 0; i<divide.length; i++){
     answer.push(divide[i][1])
 }
+
+
 
 return answer
 }
