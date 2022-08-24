@@ -1,4 +1,4 @@
-#javascript
+//javascript
 
 function solution(arr)
 {

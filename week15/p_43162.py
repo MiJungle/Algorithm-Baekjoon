@@ -21,4 +21,4 @@ def bfs(i):
                 q.append(i)
                 visited[i] = 1
         
-print(island(n))
+print(solution(n))
