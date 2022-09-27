@@ -1,32 +1,23 @@
 
-https://velog.io/@sso/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-Javascript-%EC%98%81%EC%96%B4-%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0
 function solution(n, words) {
-    var answer = [];
-    var number = 0;
-    var order = 0;
-
-    for(var i=1; i<words.length; i++){
-    // 끝말을 잇지 않은 경우   || 중복된 단어가 있는 경우
-        var subArr = words.slice(0,i);
-    	if((words[i-1].substring(words[i-1].length-1) !== words[i][0])|| (subArr.some(word=> word === words[i]))){
-        if((i+1)%n ===0){
-          number = n;
-        }else{
-         number = (i+1)%n ;
-      	}
-        order = Math.ceil((i+1)/n);
-        break;
+    let idx;
+    for (let i = 0; i < words.length; i++) {
+      // 끝말잇기 틀린 경우
+      if (i !== 0 && words[i][0] !== words[i - 1][words[i - 1].length - 1]) {
+        idx = i + 1;
+        return [idx % n === 0 ? n : idx % n, Math.ceil(idx / n)];
+      }
+      // 중복 단어 말한 경우
+      for (let j = i - 1; j >= 0; j--) {
+        if (words[i] === words[j]) {
+          idx = i + 1;
+          return [idx % n === 0 ? n : idx % n, Math.ceil(idx / n)];
+        }
       }
     }
-    if(number===0 && order===0){
-        answer = [0,0];
-    }else{
-        answer = [number,order ];
-    }
+    return [0, 0];
+  }
   
-    return answer;
-}
-
 
 
 
