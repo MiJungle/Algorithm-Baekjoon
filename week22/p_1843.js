@@ -1,3 +1,4 @@
+https://velog.io/@longroadhome/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV.4-%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0
 function solution (arr) {
     const operandsCount = Math.ceil(arr.length / 2);
     const max_dp = new Array(operandsCount).fill().map(_ => new Array(operandsCount).fill(-Infinity));
