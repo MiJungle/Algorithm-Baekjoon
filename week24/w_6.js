@@ -34,7 +34,7 @@ function problem6(forms) {
   }
   
 
-  forms = [ ["Bm@email.com", "제이엠"], 
+  forms = [ ["Bm@email.com", "제이엠오"], 
         ["ason@email.com", "제이슨"], 
         ["woniee@email.com", "워니"], 
         ["mj@email.com", "엠제이"], 
