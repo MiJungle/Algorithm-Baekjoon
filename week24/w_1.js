@@ -42,7 +42,6 @@ function problem1(pobi, crong) {
     if(pobi_num > crong_num) answer = 1
     else if(pobi_num < crong_num) answer = 2
     else if (pobi_num == crong_num) answer = 0
-    console.log(pobi_num,crong_num)
     return answer;
   }
 
